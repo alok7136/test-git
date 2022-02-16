@@ -62,21 +62,27 @@ const data =[
   ]
 
 
-let data2 = data.filter((e)=>e.tm_number==972484103)
-let data3 = data.filter((e)=>e.tm_number==9724084105)
-let data4 = data.filter((e)=>e.tm_number==9724084103)
+// let data2 = data.filter((e)=>e.tm_number==972484103)
+// let data3 = data.filter((e)=>e.tm_number==9724084105)
+// let data4 = data.filter((e)=>e.tm_number==9724084103)
 
-// let arr2 = [{9724084103},
-//     {tm_number:972484103},
-//     {tm_number:972484103}]
+// // let arr2 = [{9724084103},
+// //     {tm_number:972484103},
+// //     {tm_number:972484103}]
 
-// let res = arr2.push(tm_name);
-// console.log(arr2);
+// // let res = arr2.push(tm_name);
+// // console.log(arr2);
 
-const testarr = []
+// const testarr = []
 
 
-testarr.push({tm_number:data2},{tm_number:data3},{tm_number:data4})
-// console.log(testarr);
+// testarr.push({tm_number:data2},{tm_number:data3},{tm_number:data4})
+// // console.log(testarr);
 
-document.write(testarr);
+// document.write(testarr);
+
+  let finalarr = [{"972484103":data1.filter((e)=>e.tm_number==972484103)},
+  {"9724084105":data1.filter((e)=>e.tm_number==9724084105)},
+  {"9724084103":data1.filter((e)=>e.tm_number==9724084103)}]
+  
+  console.log(finalarr)
