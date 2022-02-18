@@ -62,27 +62,32 @@ const data =[
   ]
 
 
-// let data2 = data.filter((e)=>e.tm_number==972484103)
-// let data3 = data.filter((e)=>e.tm_number==9724084105)
-// let data4 = data.filter((e)=>e.tm_number==9724084103)
+// let result=[]
 
-// // let arr2 = [{9724084103},
-// //     {tm_number:972484103},
-// //     {tm_number:972484103}]
+//   let groupBy = (data, tm_number) => {
+//     return data.reduce((result,Value) => {
+//       (result[Value[tm_number]] = result[Value[tm_number]]||[]).push(Value);
+//       return result;
+//     },{}); 
+//   };
 
-// // let res = arr2.push(tm_name);
-// // console.log(arr2);
+// const person = groupBy(data,"tm_number")
 
-// const testarr = []
-
-
-// testarr.push({tm_number:data2},{tm_number:data3},{tm_number:data4})
-// // console.log(testarr);
-
-// document.write(testarr);
-
-  let finalarr = [{"972484103":data1.filter((e)=>e.tm_number==972484103)},
-  {"9724084105":data1.filter((e)=>e.tm_number==9724084105)},
-  {"9724084103":data1.filter((e)=>e.tm_number==9724084103)}]
+// console.log(person)
   
-  console.log(finalarr)
+
+var shortby = (list, key) => {
+  let newdata = {};
+  list.forEach(item => {
+    
+      let newItem = Object.assign({}, item);
+      delete newItem[key];
+      newdata[item[key]] = newdata[item[key]] || [];
+      newdata[item[key]].push(newItem);
+  });
+  return newdata;
+};
+let result= shortby(data, 'tm_number')
+
+console.log(result);
+
